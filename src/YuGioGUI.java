@@ -33,4 +33,5 @@ public class YuGioGUI {
             }
         });
     }
+    private JLabel def_C1_J1;
 }
