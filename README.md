@@ -26,3 +26,18 @@ CardException: error con mensaje legible para el usuario.
 Duel: reglas del duelo (turno inicial, comparación ATK/DEF, puntos, cartas gastadas). No usa Swing; devuelve el texto que la ventana escribe en el log.
 YuGioGUI: ventana que muestra las cartas, recibe las elecciones del jugador y pinta el log.
 
+Cuando se ejuca el UI
+Hacer click al boton de iniciar juego.
+<img width="816" height="675" alt="image" src="https://github.com/user-attachments/assets/e0beb0d0-4c93-41d2-a30b-3bba6d802292" />
+Ejegir car y hacer click en ataque 
+<img width="831" height="683" alt="image" src="https://github.com/user-attachments/assets/04c45add-3e6c-4024-a638-3c091ff3579c" />
+
+Selecionar la carte que se va a ajugar 
+<img width="830" height="687" alt="image" src="https://github.com/user-attachments/assets/853efbde-d33b-495d-b3d5-fa477025dd13" />
+
+cuando se 
+<img width="803" height="687" alt="image" src="https://github.com/user-attachments/assets/de9652f8-3631-4576-a30a-901739f708d6" />
+
+iniciar juego
+<img width="819" height="677" alt="image" src="https://github.com/user-attachments/assets/3a5c7b4d-f37c-476b-982e-89cdc7821bd6" />
+
