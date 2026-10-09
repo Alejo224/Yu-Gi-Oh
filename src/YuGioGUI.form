@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="YuGioGUI">
-  <grid id="27dc6" layout-manager="GridLayoutManager" row-count="7" column-count="6" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="jpanelYuGio" layout-manager="GridLayoutManager" row-count="10" column-count="7" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
       <xy x="20" y="20" width="500" height="400"/>
@@ -8,7 +8,7 @@
     <properties/>
     <border type="none"/>
     <children>
-      <component id="43fbf" class="javax.swing.JLabel" binding="Carta1_J1">
+      <component id="43fbf" class="javax.swing.JLabel" binding="maquina_Carta1">
         <constraints>
           <grid row="4" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -21,17 +21,17 @@
           <grid row="3" column="0" row-span="1" col-span="2" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
         </constraints>
       </vspacer>
-      <component id="e96f3" class="javax.swing.JLabel" binding="Carta2_J1">
+      <component id="e96f3" class="javax.swing.JLabel" binding="maquina_img_Carta2">
         <constraints>
-          <grid row="4" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="4" column="2" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Imagen"/>
         </properties>
       </component>
-      <component id="f30ef" class="javax.swing.JLabel" binding="Carta3_J1">
+      <component id="f30ef" class="javax.swing.JLabel" binding="maquina_imagen_Carta3">
         <constraints>
-          <grid row="4" column="4" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="4" column="5" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Imagen"/>
@@ -39,13 +39,13 @@
       </component>
       <component id="c04d3" class="javax.swing.JLabel" binding="Carta3_J2">
         <constraints>
-          <grid row="2" column="4" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="2" column="5" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Imagen"/>
         </properties>
       </component>
-      <component id="99d50" class="javax.swing.JLabel" binding="Carta2_J2">
+      <component id="99d50" class="javax.swing.JLabel" binding="imgCarta2_J2">
         <constraints>
           <grid row="2" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -61,7 +61,7 @@
           <text value="Imagen"/>
         </properties>
       </component>
-      <component id="5c932" class="javax.swing.JLabel">
+      <component id="5c932" class="javax.swing.JLabel" binding="maquina_Atk_C1">
         <constraints>
           <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -69,105 +69,65 @@
           <text value="Ataque"/>
         </properties>
       </component>
-      <component id="37694" class="javax.swing.JLabel" binding="Atk_C1_J1">
+      <component id="37694" class="javax.swing.JLabel" binding="maquina_nombre_C1">
         <constraints>
           <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Label"/>
+          <text value="nombre"/>
         </properties>
       </component>
-      <component id="5c12d" class="javax.swing.JLabel">
+      <component id="5c12d" class="javax.swing.JLabel" binding="maquina_C2_Atk">
         <constraints>
-          <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="5" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Ataque"/>
         </properties>
       </component>
-      <component id="c0180" class="javax.swing.JLabel" binding="Atk_C2_J1">
-        <constraints>
-          <grid row="5" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Label"/>
-        </properties>
-      </component>
-      <component id="e1b86" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="5" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Ataque"/>
-        </properties>
-      </component>
-      <component id="29a68" class="javax.swing.JLabel" binding="Atk_C3_J1">
+      <component id="e1b86" class="javax.swing.JLabel" binding="maquina_nombreC3">
         <constraints>
           <grid row="5" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Label"/>
+          <text value="nombre"/>
         </properties>
       </component>
-      <component id="2c7bc" class="javax.swing.JLabel">
+      <component id="29a68" class="javax.swing.JLabel" binding="maquina_Atk_C3">
+        <constraints>
+          <grid row="5" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="ataque"/>
+        </properties>
+      </component>
+      <component id="2c7bc" class="javax.swing.JLabel" binding="maquina_Def_C1">
         <constraints>
           <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Def"/>
+          <text value="Defensa"/>
         </properties>
       </component>
-      <component id="31332" class="javax.swing.JLabel" binding="Def_C1_J1">
-        <constraints>
-          <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Label"/>
-        </properties>
-      </component>
-      <component id="dab7f" class="javax.swing.JLabel">
+      <component id="dab7f" class="javax.swing.JLabel" binding="maquina_Def_C2">
         <constraints>
           <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Def"/>
+          <text value="Defensa"/>
         </properties>
       </component>
-      <component id="fc7dc" class="javax.swing.JLabel" binding="Def_C2_J1">
+      <component id="221ad" class="javax.swing.JLabel" binding="maquina_Def_C3_J3">
         <constraints>
-          <grid row="6" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="6" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Label"/>
+          <text value="Defensa"/>
         </properties>
       </component>
-      <component id="4b158" class="javax.swing.JLabel">
+      <component id="29ffa" class="javax.swing.JLabel" binding="nombre_C3_J3">
         <constraints>
-          <grid row="6" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Def"/>
-        </properties>
-      </component>
-      <component id="221ad" class="javax.swing.JLabel" binding="Def_C3_J1">
-        <constraints>
-          <grid row="6" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Label"/>
-        </properties>
-      </component>
-      <component id="334" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="1" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Def"/>
-        </properties>
-      </component>
-      <component id="29ffa" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="0" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="Ataque"/>
@@ -175,61 +135,45 @@
       </component>
       <component id="f17ee" class="javax.swing.JLabel" binding="Atk_C3_J2">
         <constraints>
-          <grid row="0" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="0" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Label"/>
+          <text value="ataque"/>
         </properties>
       </component>
       <component id="ad34a" class="javax.swing.JLabel" binding="Def_C3_J2">
         <constraints>
-          <grid row="1" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Label"/>
+          <text value="Defensa"/>
         </properties>
       </component>
       <component id="4dbcd" class="javax.swing.JLabel" binding="Def_C2_J2">
         <constraints>
-          <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Label"/>
-        </properties>
-      </component>
-      <component id="c3e16" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Def"/>
+          <text value="Defensa"/>
         </properties>
       </component>
       <component id="d3229" class="javax.swing.JLabel" binding="Atk_C2_J2">
         <constraints>
-          <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Label"/>
+          <text value="ataque"/>
         </properties>
       </component>
-      <component id="ab560" class="javax.swing.JLabel">
+      <component id="ab560" class="javax.swing.JLabel" binding="nombre_C2_J1">
         <constraints>
-          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="0" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Ataque"/>
+          <text value="nombre"/>
         </properties>
       </component>
-      <component id="f625e" class="javax.swing.JLabel" binding="Def_C1_J2">
-        <constraints>
-          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Label"/>
-        </properties>
-      </component>
-      <component id="89fe9" class="javax.swing.JLabel">
+      <component id="89fe9" class="javax.swing.JLabel" binding="def_C1_J1">
         <constraints>
           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -237,15 +181,44 @@
           <text value="Def"/>
         </properties>
       </component>
-      <component id="2cb80" class="javax.swing.JLabel" binding="Atk_C1_J2">
+      <component id="2cb80" class="javax.swing.JLabel" binding="nombre_C1_J1">
         <constraints>
           <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Label"/>
+          <text value="nombre"/>
         </properties>
       </component>
-      <component id="d775c" class="javax.swing.JLabel">
+      <hspacer id="aee3a">
+        <constraints>
+          <grid row="7" column="2" row-span="1" col-span="2" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </hspacer>
+      <component id="cebe5" class="javax.swing.JButton" binding="iniciarDueloButton">
+        <constraints>
+          <grid row="8" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Iniciar Duelo"/>
+        </properties>
+      </component>
+      <component id="373f0" class="javax.swing.JButton" binding="elegirCartaButton" default-binding="true">
+        <constraints>
+          <grid row="9" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Elegir carta"/>
+        </properties>
+      </component>
+      <component id="9a9bc" class="javax.swing.JLabel" binding="maquina_nombre_C2">
+        <constraints>
+          <grid row="6" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="nombre"/>
+        </properties>
+      </component>
+      <component id="e6d33" class="javax.swing.JLabel" binding="Atk1_C1_J1">
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
