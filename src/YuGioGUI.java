@@ -32,14 +32,13 @@ public class YuGioGUI {
     private JLabel nombre_C1_J1;
     private JLabel nombre_C2_J1;
     private JLabel nombre_C3_J3;
-    private JLabel def_C1_J1;    // OJO: no hay Atk_C1_J1 en el form
+    private JLabel def_C1_J1;
     private JLabel Atk_C2_J2;
     private JLabel Def_C2_J2;
     private JLabel Atk_C3_J2;
     private JLabel Def_C3_J2;
     private JLabel Atk1_C1_J1;
 
-    // ==== Estado del juego ====
     private final YgoApiClient api = new YgoApiClient();
     private Duel duel;
     private List<Card> cartasJugador;
@@ -50,15 +49,15 @@ public class YuGioGUI {
     private final boolean[] usadaJugador = new boolean[3];
     private final boolean[] usadaMaquina = new boolean[3];
 
-    // ==== Log de batalla ====
+    // Log de batalla
     private final JTextArea logArea = new JTextArea(8, 40);
     private final JScrollPane logScroll = new JScrollPane(logArea);
 
-    // ==== Arrays de JLabels para iterar ====
+    // Arrays de JLabels para iterar
     private JLabel[] imgJugador, nomJugador, atkJugador, defJugador;
     private JLabel[] imgMaquina, nomMaquina, atkMaquina, defMaquina;
 
-    // ==== Bordes para resaltar selección ====
+    // Bordes para resaltar selección
     private static final Border BORDE_NORMAL = BorderFactory.createEmptyBorder(3, 3, 3, 3);
     private static final Border BORDE_SEL    = BorderFactory.createLineBorder(Color.ORANGE, 3);
 
@@ -92,13 +91,11 @@ public class YuGioGUI {
         logArea.setWrapStyleWord(true);
         logScroll.setPreferredSize(new Dimension(400, 120));
 
-        // Si ya tienes un JTextArea en el diseñador, borra este bloque.
         if (jpanelYuGio != null) {
             try {
                 jpanelYuGio.add(logScroll);
                 jpanelYuGio.revalidate();
             } catch (Exception ignored) {
-                // el layout del form no admite añadir por código
             }
         }
     }
@@ -126,7 +123,6 @@ public class YuGioGUI {
         logArea.setText("");
         log("Cargando 6 cartas desde YGOProDeck...");
 
-        // Se ejecuta fuera del EDT para no congelar la UI
         new SwingWorker<List<Card>, Void>() {
             @Override protected List<Card> doInBackground() throws Exception {
                 return api.cargarMazo(6);
