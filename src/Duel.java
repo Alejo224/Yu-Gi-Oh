@@ -1,77 +1,107 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.Random;
 
+
 public class Duel {
-    Random random = new Random();
-    private Card J1;
-    private Card J2;
-    private String jugadorInicial;
-    private int puntosJ1;
-    private int puntosJ2;
-    private Card[] manoJ1;
-    private Card[] manoMaquina;
+    private static final int PUNTOS_PARA_GANAR = 2;
 
-    public Duel(Card J1, Card J2,Card[] manoJ1, Card[] manoMaquina) {
-        this.J1 = J1;
-        this.J2 = J2;
-        this.manoJ1 = manoJ1;
-        this.manoMaquina = manoMaquina;
+    private final Random random = new Random();
+    private final List<Card> manoJugador;
+    private final List<Card> manoMaquina;
+    private int puntosJugador;
+    private int puntosMaquina;
+
+    public Duel(Card[] manoJugador, Card[] manoMaquina) {
+        this.manoJugador = new ArrayList<>(Arrays.asList(manoJugador));
+        this.manoMaquina = new ArrayList<>(Arrays.asList(manoMaquina));
     }
 
-    //Comienza el juego
-    public void turnoInicial() {
 
-        if (random.nextBoolean()) {
-            this.jugadorInicial = J1.getNombre();
-            System.out.println("Comenzo j1");
+    public String turnoInicial() {
+        return random.nextBoolean() ? "Comienza el jugador." : "Comienza la máquina.";
+    }
+
+
+    public String jugarRonda(Card cartaJugador, boolean ataqueJugador) {
+        if (terminado()) {
+            return "El duelo ya terminó.";
+        }
+        if (!manoJugador.remove(cartaJugador)) {
+            return "Esa carta ya no está disponible.";
+        }
+
+        // La máquina elige carta y modo al azar; la carta sale de su mano
+        Card cartaMaquina = manoMaquina.remove(random.nextInt(manoMaquina.size()));
+        boolean ataqueMaquina = random.nextBoolean();
+
+        StringBuilder log = new StringBuilder();
+        log.append("Jugador juega ").append(describir(cartaJugador, ataqueJugador)).append('\n');
+        log.append("Máquina juega ").append(describir(cartaMaquina, ataqueMaquina)).append('\n');
+
+        // 1 = gana jugador, 2 = gana máquina, 0 = nadie
+        int ganador = evaluar(cartaJugador, ataqueJugador, cartaMaquina, ataqueMaquina);
+        if (ganador == 1) {
+            puntosJugador++;
+            log.append("Resultado: gana el jugador.\n");
+        } else if (ganador == 2) {
+            puntosMaquina++;
+            log.append("Resultado: gana la máquina.\n");
         } else {
-            this.jugadorInicial = J2.getNombre();
-            System.out.println("Comenzo j2");
+            log.append("Resultado: nadie suma punto.\n");
         }
+        log.append("Puntaje -> Jugador ").append(puntosJugador)
+                .append(" - Máquina ").append(puntosMaquina);
+
+        if (terminado()) {
+            log.append("\n*** Ganador del duelo: ").append(getGanador()).append(" ***");
+        }
+        return log.toString();
     }
 
-    //que jugador gana
-    public void evaluarRonda(Card carta1, Card carta2, boolean ataque1, boolean ataque2) {
-
+    private int evaluar(Card c1, boolean ataque1, Card c2, boolean ataque2) {
         if (ataque1 && ataque2) {
-            if (carta1.getAtk() > carta2.getAtk()) {
-                this.puntosJ1++;
-            } else
-                this.puntosJ2++;
-        } else if (ataque1 && !ataque2) {
-            if (carta1.getAtk() > carta2.getDef()) {
-                this.puntosJ1++;
-            } else
-                this.puntosJ2++;
-        } else if (!ataque1 && ataque2) {
-            if(carta2.getAtk() > carta1.getDef()) {
-                this.puntosJ2++;
-            }
-            else
-                this.puntosJ1++;
+            if (c1.getAtk() > c2.getAtk()) return 1;
+            if (c2.getAtk() > c1.getAtk()) return 2;
+            return 0;
         }
-
-        //Ganador del duelo
-        if (puntosJ1 >= 2) {
-            System.out.println(this.J1.getNombre());
-        } else if (puntosJ2 >= 2) {
-            System.out.println(this.J2.getNombre());
+        if (ataque1) {
+            return c1.getAtk() > c2.getDef() ? 1 : 2;
         }
+        if (ataque2) {
+            return c2.getAtk() > c1.getDef() ? 2 : 1;
+        }
+        return 0;
+    }
+
+    private String describir(Card c, boolean ataque) {
+        return c.getNombre() + " (ATK " + c.getAtk() + " / DEF " + c.getDef() + ") en "
+                + (ataque ? "ATAQUE" : "DEFENSA");
     }
 
 
-    public Card elegirCartaMaquina(){
-        int indiceAzar = random.nextInt(manoMaquina.length);
-        return manoMaquina[indiceAzar];
+
+    public boolean terminado() {
+        return puntosJugador >= PUNTOS_PARA_GANAR
+                || puntosMaquina >= PUNTOS_PARA_GANAR
+                || manoJugador.isEmpty();
     }
-    //maquina elige al zar las cartas del mazo
-    public boolean elegirModoMaquina() {
-        return random.nextBoolean();
+
+    public String getGanador() {
+        if (!terminado()) return null;
+        if (puntosJugador > puntosMaquina) return "Jugador";
+        if (puntosMaquina > puntosJugador) return "Máquina";
+        return "Empate";
     }
-    public static void main(String[] args) {
-        Card card1 = new Card();
-        Card card2 = new Card();
-        // Duel duel = new Duel(card1, card2);
-        // duel.turnoInicial();
+
+    public int getPuntosJugador() { return puntosJugador; }
+
+    public int getPuntosMaquina() { return puntosMaquina; }
+
+    public List<Card> getManoJugador() {
+        return Collections.unmodifiableList(manoJugador);
     }
 
 }
