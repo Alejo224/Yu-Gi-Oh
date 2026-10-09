@@ -8,11 +8,13 @@ public class Duel {
     private int puntosJ1;
     private int puntosJ2;
     private Card[] manoJ1;
-    private Card[] manoJ2;
+    private Card[] manoMaquina;
 
-    public Duel(Card J1, Card J2,Card[] manoJ1, Card[] manoJ2) {
+    public Duel(Card J1, Card J2,Card[] manoJ1, Card[] manoMaquina) {
         this.J1 = J1;
         this.J2 = J2;
+        this.manoJ1 = manoJ1;
+        this.manoMaquina = manoMaquina;
     }
 
     //Comienza el juego
@@ -63,7 +65,11 @@ public class Duel {
        // duel.turnoInicial();
     }
     public Card elegirCartaMaquina(){
-
+        int indiceAzar = random.nextInt(manoMaquina.length);
+        return manoMaquina[indiceAzar];
+    }
+    public boolean elegirModoMaquina() {
+        return random.nextBoolean();
     }
 
 }
