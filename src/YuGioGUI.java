@@ -1,4 +1,6 @@
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class YuGioGUI {
     private JLabel Carta1_J1;
@@ -19,4 +21,16 @@ public class YuGioGUI {
     private JLabel Def_C3_J2;
     private JLabel Def_C2_J2;
     private JLabel Def_C1_J2;
+    private JButton iniciarDueloButton;
+    private JButton elegirCartaButton;
+    private JPanel jpanelYuGio;
+
+    public YuGioGUI() {
+        elegirCartaButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+
+            }
+        });
+    }
 }
