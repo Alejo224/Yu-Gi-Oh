@@ -58,18 +58,20 @@ public class Duel {
         }
     }
 
-    public static void main(String[] args) {
-        Card card1 = new Card();
-        Card card2 = new Card();
-       // Duel duel = new Duel(card1, card2);
-       // duel.turnoInicial();
-    }
+
     public Card elegirCartaMaquina(){
         int indiceAzar = random.nextInt(manoMaquina.length);
         return manoMaquina[indiceAzar];
     }
+    //maquina elige al zar las cartas del mazo
     public boolean elegirModoMaquina() {
         return random.nextBoolean();
+    }
+    public static void main(String[] args) {
+        Card card1 = new Card();
+        Card card2 = new Card();
+        // Duel duel = new Duel(card1, card2);
+        // duel.turnoInicial();
     }
 
 }
