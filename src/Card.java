@@ -4,6 +4,7 @@ public class Card {
     private String nombre;
     private int atk, def;
     private Image imagen;
+    private int id;
 
 
     // Getters and setters
@@ -39,7 +40,14 @@ public class Card {
         this.imagen = imagen;
     }
 
-    // To String
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id){
+        this.id = id;
+    }
+
     @Override
     public String toString() {
         return "Card{" +
@@ -47,6 +55,7 @@ public class Card {
                 ", atk=" + atk +
                 ", def=" + def +
                 ", imagen=" + imagen +
+                ", id=" + id +
                 '}';
     }
 }
