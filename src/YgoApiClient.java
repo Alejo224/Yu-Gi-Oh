@@ -1,5 +1,4 @@
 import org.json.JSONObject;
-
 import java.net.URI;
 import java.net.http.HttpRequest;
 import java.time.Duration;
