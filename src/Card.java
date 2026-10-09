@@ -5,6 +5,7 @@ public class Card {
     private int atk, def;
     private Image imagen;
     private int id;
+    private String imageUrl;
 
 
     // Getters and setters
@@ -34,6 +35,14 @@ public class Card {
 
     public Image getImagen() {
         return imagen;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public void setImagen(Image imagen) {
