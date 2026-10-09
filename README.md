@@ -13,6 +13,11 @@ El primero en ganar 2 rondas gana el duelo. Si se acaban las cartas sin que nadi
 
 Mensajes de error:
 Si falla la red o la API no responde, el juego muestra el mensaje en pantalla en lugar de cerrarse. Vuelve a iniciar para repartir cartas de nuevo.
+Se implemento la logica para cumplir como decia el pdf para saber quien gano 
+Ataque	Ataque	El de mayor ATK (si empatan, nadie suma)
+Ataque	Defensa	El atacante si su ATK es mayor que la DEF del defensor; si no, el defensor
+Defensa	Ataque	Igual que arriba, con la máquina como atacante
+Defensa	Defensa	Nadie suma punto
 
 Diseño del proyecto
 Card: modelo de datos de una carta (nombre, ATK, DEF, imagen, URL de imagen).
